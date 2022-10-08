@@ -13,7 +13,7 @@ $ composer require phpunit/phpunit ^9.0.0
 Install tests
 
 ```bash
-$ composer require phphleb/api-tests
+$ composer require phphleb/api-tests 1.0.0
 ```
 
 Running tests from the project directory
