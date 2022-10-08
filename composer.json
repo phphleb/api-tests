@@ -1,0 +1,24 @@
+{
+  "name": "phphleb/api-tests",
+  "description": "PHPUnit tests from set of API traits",
+  "type": "library",
+  "keywords": [
+    "api",
+    "tests"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Foma Tuturov",
+      "email": "fomiash@yandex.ru"
+    }
+  ],
+  "require": {
+    "php": "^7.4.0 || ^8.0.0",
+    "phphleb/api-multitool": "1.0.0",
+    "phpunit/phpunit": ">=6.0.0"
+  },
+  "config": {
+    "optimize-autoloader": true
+  }
+}
