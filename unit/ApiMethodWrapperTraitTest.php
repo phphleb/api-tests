@@ -2,6 +2,11 @@
 
 // Start  phpunit vendor/phphleb/api-tests/unit/Src/ApiMethodWrapperTraitTest.php
 
+// Если загрузчик не нашёл класс
+if (!class_exists('ApiExampleTestController')) {
+    require_once __DIR__ . '/../src/ApiExampleTestController.php';
+}
+
 use PHPUnit\Framework\TestCase;
 
 class ApiMethodWrapperTraitTest extends TestCase
