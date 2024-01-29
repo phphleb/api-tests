@@ -1,10 +1,8 @@
 <?php
 
-// Start  phpunit vendor/phphleb/api-tests/unit/BaseApiTraitTest.php
+declare(strict_types = 1);
 
-use PHPUnit\Framework\TestCase;
-
-class BaseApiTraitTest extends TestCase
+class BaseApiTraitTest extends \Phphleb\TestO\TestCase
 {
     use \Phphleb\ApiMultitool\BaseApiTrait;
 
@@ -32,7 +30,7 @@ class BaseApiTraitTest extends TestCase
     ];
 
     // Проверка, что валидация работает комплексно
-    public function testComprehensiveValidationCheck()
+    public function testComprehensiveValidationCheck(): void
     {
         $result = $this->check($this->request, $this->rules);
 
@@ -40,7 +38,7 @@ class BaseApiTraitTest extends TestCase
     }
 
     // Проверка возврата ошибки
-    public function testReturnOneSpecificErrorCheck()
+    public function testReturnOneSpecificErrorCheck(): void
     {
         $result = $this->check($this->errorRequest, $this->rules);
         $errors = $this->getErrorCells();
@@ -49,13 +47,11 @@ class BaseApiTraitTest extends TestCase
     }
 
     // Проверка возврата множественных ошибок
-    public function testMultipleErrorReturnCheck()
+    public function testMultipleErrorReturnCheck(): void
     {
         $result = $this->check($this->errorRequest, $this->rules, '', false);
         $errors = $this->getErrorCells();
 
         $this->assertTrue($errors === ['name2', 'name4']);
     }
-
-
 }

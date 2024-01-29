@@ -1,18 +1,18 @@
 <?php
 
-// Start  phpunit vendor/phphleb/api-tests/unit/Src/ApiMethodWrapperTraitTest.php
+declare(strict_types = 1);
 
-// Если загрузчик не нашёл класс
-if (!class_exists('ApiExampleTestController')) {
-    require_once __DIR__ . '/../src/ApiExampleTestController.php';
-}
-
-use PHPUnit\Framework\TestCase;
-
-class ApiMethodWrapperTraitTest extends TestCase
+class ApiMethodWrapperTraitTest extends \Phphleb\TestO\TestCase
 {
+    public function __construct()
+    {
+        if (!class_exists('ApiExampleTestController')) {
+            require_once __DIR__ . '/../src/ApiExampleTestController.php';
+        }
+    }
+
     // Проверка, что отрабатывает правильный метод (этого метода нет в контроллере он будет перенаправлен).
-    public function testController01()
+    public function testController01(): void
     {
         $controller = new ApiExampleTestController();
 
@@ -20,7 +20,7 @@ class ApiMethodWrapperTraitTest extends TestCase
     }
 
     // Проверка, что отрабатывает правильный метод (обычные методы должны остаться рабочими).
-    public function testController02()
+    public function testController02(): void
     {
         $controller = new ApiExampleTestController();
 
