@@ -8,7 +8,7 @@ Tests for API Traits
 Install tests
 
 ```bash
-$ composer require phphleb/api-tests 2.0.0
+$ composer require phphleb/api-tests
 ```
 
 Running tests from the project directory
